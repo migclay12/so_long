@@ -3,12 +3,13 @@ SRC = image.c main.c hooks.c
 OBJ = $(SRC:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
-LINKS = -lmlx -framework OpenGL -framework AppKit
+#LINKS = -lmlx -framework OpenGL -framework AppKit
+#$(LINKS) -o
 
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-		@gcc $(FLAGS) $(OBJ) $(LINKS) -o $(NAME)
+		@gcc $(FLAGS) $(OBJ) $(NAME)
 
 $(OBJ): $(SRC)
 		@gcc $(FLAGS) -c $(SRC)

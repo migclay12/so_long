@@ -1,7 +1,7 @@
 #ifndef MOVE_H
 # define MOVE_H
 
-#include <mlx.h>
+#include "/workspaces/so_long/minilibx-linux/mlx.h"
 #include <stdlib.h>
 #include <stdio.h>
 
