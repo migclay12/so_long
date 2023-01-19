@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "mlx.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "move.h": "c"
     }
 }

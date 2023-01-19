@@ -8,24 +8,25 @@ int ft_input(int key, void *param)
 	mlx_clear_window(program->mlx, program->window.reference);
 
 	if (key == 2)
-		program->sprite_position.x += program->sprite.size.x;
+		program->player_position.x += program->player.size.x;
 	else if (key == 0)
-		program->sprite_position.x -= program->sprite.size.x;
+		program->player_position.x -= program->player.size.x;
 	else if (key == 1)
-		program->sprite_position.y += program->sprite.size.y;
+		program->player_position.y += program->player.size.y;
 	else if (key == 13)
-		program->sprite_position.y -= program->sprite.size.y;
+		program->player_position.y -= program->player.size.y;
 	else if (key == ESC)
 		exit (0);
 
-	mlx_put_image_to_window(program->mlx, program->window.reference, program->sprite.reference, 
-			program->sprite_position.x, program->sprite_position.y);
+	mlx_put_image_to_window(program->mlx, program->window.reference, program->player.reference, 
+			program->player_position.x, program->player_position.y);
 
 	printf("Key -> %d\n", key);
 
 	return (0);
 }
 
+//ADDS MOVEMENT TO THE CHARACTER
 /*
 int ft_update (void *param)
 {

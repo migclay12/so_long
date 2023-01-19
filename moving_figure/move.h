@@ -38,15 +38,17 @@ typedef struct	s_image {
 typedef struct	s_program {
 	void		*mlx;
 	t_window	window;
-	t_image		sprite;
-	t_vector	sprite_position;
+	t_image		player;
+	t_image		floor;
+	t_vector	player_position;
+	t_vector	floor_position;
 }				t_program;
 
 //FUNCTIONS
 
 t_image	ft_new_sprite(void *mlx, char *path);
 int ft_input(int key, void *param);
-int ft_update (void *param);
+//int ft_update (void *param);
 t_window	ft_new_window(void *mlx, int widht, int height, char *name);
 int	close(int keycode, t_program *vars);
 

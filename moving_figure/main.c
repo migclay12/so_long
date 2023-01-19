@@ -12,13 +12,20 @@ int	main(void)
 	program.mlx = mlx_init();
 	program.window.reference = mlx_new_window(program.mlx, 600, 400, "Hello world!");
 
-	program.sprite = ft_new_sprite(program.mlx, "idle.xpm");
-	program.sprite_position.x = 0;
-	program.sprite_position.y = 0;
+	program.player = ft_new_sprite(program.mlx, "idle.xpm");
+	program.player_position.x = 0;
+	program.player_position.y = 0;
 
-    mlx_put_image_to_window(program.mlx, program.window.reference,
-		program.sprite.reference, program.sprite_position.x, program.sprite_position.y);
-	
+	program.floor = ft_new_sprite(program.mlx, "tile.xpm");
+		program.floor_position.x = 38;
+		program.floor_position.y = 0;
+    
+	mlx_put_image_to_window(program.mlx, program.window.reference,
+		program.player.reference, program.player_position.x, program.player_position.y);
+
+	mlx_put_image_to_window(program.mlx, program.window.reference,
+		program.floor.reference, program.floor_position.x, program.floor_position.y);
+
     mlx_key_hook(program.window.reference, *ft_input, &program);
     //mlx_loop_hook(program.mlx, *ft_update, &program);
 
