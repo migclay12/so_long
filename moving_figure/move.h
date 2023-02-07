@@ -1,17 +1,10 @@
 #ifndef MOVE_H
 # define MOVE_H
 
-#include "/Users/miggonza/42cursus/git_long/minilibx-linux/mlx.h"
+#include <mlx.h>
 #include <stdlib.h>
 #include <stdio.h>
-
-#ifndef ESC
-# define ESC 53
-#endif
-
-# ifndef ANIMATION_FRAMES
-#  define ANIMATION_FRAMES 10
-# endif
+#include "define.h"
 
 //STRUCTURES
 

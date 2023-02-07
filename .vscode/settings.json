@@ -2,6 +2,8 @@
     "files.associations": {
         "mlx.h": "c",
         "stdlib.h": "c",
-        "move.h": "c"
+        "move.h": "c",
+        "get_next_line.h": "c",
+        "map.h": "c"
     }
 }

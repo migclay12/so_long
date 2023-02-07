@@ -7,13 +7,13 @@ int ft_input(int key, void *param)
 	// mlx function that clears the window
 	mlx_clear_window(program->mlx, program->window.reference);
 
-	if (key == 2)
+	if (key == D)
 		program->player_position.x += program->player.size.x;
-	else if (key == 0)
+	else if (key == A)
 		program->player_position.x -= program->player.size.x;
-	else if (key == 1)
+	else if (key == S)
 		program->player_position.y += program->player.size.y;
-	else if (key == 13)
+	else if (key == W)
 		program->player_position.y -= program->player.size.y;
 	else if (key == ESC)
 		exit (0);

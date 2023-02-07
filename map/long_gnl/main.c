@@ -6,10 +6,11 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 01:34:27 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/19 16:07:59 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/02/07 16:44:25 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "get_next_line.h"
 
 //Open
@@ -24,21 +25,23 @@ int	main(void)
 {
 	int		fd;
 	char	*line;
-	int		lineas;
+	//int		lineas;
 
-	lineas = 5;
+	//lineas = 5;
 	//printf("%d", OPEN_MAX);
 	//atexit(ft_leaks);
 	
 	//fd = open("./gnlTester/files/alternate_line_nl_with_nl", O_RDONLY);
-	fd = open("./gnlTester/files/alternate_line_nl_with_nl", O_RDONLY);
-	while (lineas > 0)
+	fd = open("../map0.ber", O_RDONLY);
+	while (line)
 	{
 		line = get_next_line(fd);
-		printf("%s", line);
+		if (line)
+			printf("%s", line);
 		free(line);
-		lineas--;
+		//lineas--;
 	}
 	close(fd);
 	return (0);
 }
+*/
