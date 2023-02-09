@@ -1,5 +1,4 @@
-#include "map.h"
-#include "long_gnl/get_next_line.h"
+#include "../headers/so_long.h"
 
 /*
 int	ft_strlen(const char *s)

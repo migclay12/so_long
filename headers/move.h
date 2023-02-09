@@ -1,11 +1,6 @@
 #ifndef MOVE_H
 # define MOVE_H
 
-#include <mlx.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include "define.h"
-
 //STRUCTURES
 
 typedef struct	s_vector
@@ -43,6 +38,6 @@ t_image	ft_new_sprite(void *mlx, char *path);
 int ft_input(int key, void *param);
 //int ft_update (void *param);
 t_window	ft_new_window(void *mlx, int widht, int height, char *name);
-int	close(int keycode, t_program *vars);
+//int	close(int keycode, t_program *vars);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:54:09 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/07 16:44:00 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/02/09 19:35:52 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../headers/so_long.h"
 
-int	ft_strlen(char *s)
+int	ft_strlen_gnl(char *s)
 {
 	int	count;
 
@@ -22,7 +22,7 @@ int	ft_strlen(char *s)
 	return (count);
 }
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero_gnl(void *s, size_t n)
 {
 	char	*temp;
 	size_t	i;
@@ -33,7 +33,7 @@ void	ft_bzero(void *s, size_t n)
 		temp[i++] = 0;
 }
 
-char	*ft_strchr(char *str, int c)
+char	*ft_strchr_gnl(char *str, int c)
 {
 	int	i;
 
@@ -51,18 +51,18 @@ char	*ft_strchr(char *str, int c)
 	return (NULL);
 }
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc_gnl(size_t count, size_t size)
 {
 	void	*recive;
 
 	recive = malloc(count * size);
 	if (!recive)
 		return (NULL);
-	ft_bzero(recive, count * size);
+	ft_bzero_gnl(recive, count * size);
 	return (recive);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*recive;
 	int		j;
@@ -70,7 +70,7 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	if (!s1 || !s2)
 		return (0);
-	recive = ft_calloc(sizeof(char), (ft_strlen(s1) + ft_strlen(s2) + 1));
+	recive = ft_calloc_gnl(sizeof(char), (ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1));
 	if (!recive)
 		return (0);
 	i = 0;

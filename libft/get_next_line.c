@@ -6,11 +6,11 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:17:36 by miggonza          #+#    #+#             */
-/*   Updated: 2022/10/19 20:53:56 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/02/09 19:35:42 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../headers/so_long.h"
 
 char	*ft_stash(int fd, char *stash)
 {
@@ -18,12 +18,12 @@ char	*ft_stash(int fd, char *stash)
 	int		readed;
 
 	if (!stash)
-		stash = ft_calloc(sizeof(char), 1);
-	buffer = ft_calloc(sizeof(char), BUFFER_SIZE + 1);
+		stash = ft_calloc_gnl(sizeof(char), 1);
+	buffer = ft_calloc_gnl(sizeof(char), BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);
 	readed = 1;
-	while (!ft_strchr(buffer, '\n') && readed != 0)
+	while (!ft_strchr_gnl(buffer, '\n') && readed != 0)
 	{
 		readed = read(fd, buffer, BUFFER_SIZE);
 		if (readed < 0)
@@ -33,7 +33,7 @@ char	*ft_stash(int fd, char *stash)
 			return (0);
 		}
 		buffer[readed] = '\0';
-		stash = ft_strjoin(stash, buffer);
+		stash = ft_strjoin_gnl(stash, buffer);
 	}
 	free(buffer);
 	return (stash);
@@ -49,7 +49,7 @@ char	*ft_line(char *stash)
 		return (0);
 	while (stash[i] != '\0' && stash[i] != '\n')
 		i++;
-	line = ft_calloc(sizeof(char), (i + 2));
+	line = ft_calloc_gnl(sizeof(char), (i + 2));
 	if (!line)
 		return (0);
 	i = 0;
@@ -77,7 +77,7 @@ char	*ft_clean(char *stash)
 		free(stash);
 		return (0);
 	}
-	temp = ft_calloc(sizeof(char), (ft_strlen(stash) - i + 1));
+	temp = ft_calloc_gnl(sizeof(char), (ft_strlen_gnl(stash) - i + 1));
 	if (!temp)
 		return (0);
 	i++;

@@ -6,6 +6,8 @@
         "get_next_line.h": "c",
         "map.h": "c",
         "define.h": "c",
-        "fcntl.h": "c"
+        "fcntl.h": "c",
+        "headers.h": "c",
+        "so_long.h": "c"
     }
 }

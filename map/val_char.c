@@ -1,6 +1,4 @@
-#include "map.h"
-#include "long_gnl/get_next_line.h"
-#include <fcntl.h>
+#include "../headers/so_long.h"
 
 int val_char (char c)
 {

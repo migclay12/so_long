@@ -1,4 +1,4 @@
-#include "move.h"
+#include "../headers/so_long.h"
 
 t_image	ft_new_sprite(void *mlx, char *path)
 {

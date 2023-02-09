@@ -1,4 +1,4 @@
-#include "move.h"
+#include "../headers/so_long.h"
 
 int ft_input(int key, void *param)
 {

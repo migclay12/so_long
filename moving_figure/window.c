@@ -1,5 +1,4 @@
-#include "move.h"
-
+#include "../headers/so_long.h"
 
 int ft_close ()
 {

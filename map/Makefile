@@ -1,14 +1,16 @@
-NAME = sample.out
-SRC = val_char.c
+NAME = map.a
+SRC = utils.c map_read.c main.c
 OBJ = $(SRC:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
 LINKS = -lmlx -framework OpenGL -framework AppKit
 
+LIB = ../libft/libft.a
+
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-		@gcc $(FLAGS) $(OBJ) $(LINKS) -o $(NAME)
+		@gcc $(FLAGS) $(OBJ) $(LINKS) $(LIB) -o $(NAME)
 
 $(OBJ): $(SRC)
 		@gcc $(FLAGS) -c $(SRC)
