@@ -8,6 +8,9 @@
         "define.h": "c",
         "fcntl.h": "c",
         "headers.h": "c",
-        "so_long.h": "c"
+        "so_long.h": "c",
+        "libft.h": "c",
+        "stdio.h": "c",
+        "__config": "c"
     }
 }

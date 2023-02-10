@@ -1,17 +1,33 @@
 #include "../headers/so_long.h"
 
-int val_char (char c)
+void ft_val_collect(t_map *map)
 {
-    if (c == '1' || c == '0' || c == 'P' || c == 'C' || c == 'E')
-        return (1);
-    return (0);
-}
+    int x;
+    int y;
 
-int line_count (char *map)
-{
-    int lines;
-    int file;
-
-    file = open(map, O_RDONLY);
-
+    x = 0;
+    y = 0;
+    while (map->matrix[y])
+    {
+        while (map->matrix[y][x] != '\n')
+        {
+            if (map->matrix[y][x] == COLLECTIBLE)
+                map->collectible.c++;
+            if (map->matrix[y][x] == EXIT)
+                map->collectible.e++;
+            if (map->matrix[y][x] == START)
+            {
+                map->collectible.p++;
+                map->player.xp = x;
+                map->player.yp = y;
+            }
+            x++;
+        }
+        y++;
+        x = 0;
+    }
+    if(map->collectible.e != 1 || map->collectible.p != 1)
+        ft_print_error("Player and/or exit are not correct");
+    if(map->collectible.c < 1)
+        ft_print_error("Not enough collectibles");
 }

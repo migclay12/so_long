@@ -1,5 +1,5 @@
 NAME = map.a
-SRC = utils.c map_read.c main.c
+SRC = map_read.c main.c val_char.c
 OBJ = $(SRC:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror

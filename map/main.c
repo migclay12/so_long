@@ -9,7 +9,7 @@ int	main(void)
 	char **idk;
 	int name;
 	int wall;
-	//ft_memset(&maps, 0, sizeof(t_map));
+	ft_memset(&maps, 0, sizeof(t_map));
 	
 	fd = open("map0.ber", O_RDONLY);
 	ft_map_size(fd, &maps);
@@ -19,6 +19,8 @@ int	main(void)
 	idk = ft_read_map(fd, &maps);
 	//printf("%c", idk[1][11]);
 	close (fd);
+
+	//printf("y %d", maps.x);
 
 	name = ft_map_name("map0.ber");
 	if (name != 1)
@@ -31,6 +33,11 @@ int	main(void)
 	wall = ft_mid_wall_check(&maps);
 	if (wall != 1)
 		ft_print_error("map is not surrounded by walls");
+	
+	ft_val_collect(&maps);
+	//printf("c %d", maps.collectible.c);
+	printf("x %d", maps.player.xp);
+	printf("y %d", maps.player.yp);
 
 	return (0);
 }
