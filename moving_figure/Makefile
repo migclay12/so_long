@@ -5,10 +5,14 @@ OBJ = $(SRC:.c=.o)
 FLAGS = -Wall -Wextra -Werror
 LINKS = -lmlx -framework OpenGL -framework AppKit
 
+#map_read.c main.c val_char.c val_path.c
+#MAP = ../map/map.a
+LIB = ../libft/libft.a
+
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-		@gcc $(FLAGS) $(OBJ) $(LINKS) -o $(NAME)
+		@gcc $(FLAGS) $(OBJ) $(LINKS) $(LIB) -o $(NAME)
 
 $(OBJ): $(SRC)
 		@gcc $(FLAGS) -c $(SRC)

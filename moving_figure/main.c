@@ -8,14 +8,16 @@ int ft_close ()
 int	main(void)
 {
 	t_program program;
-	//t_map maps;
+	//t_map		map;
 
+	//printf("xp %d\n", player.xp);
+	//printf("yp %d\n", player.yp);
 	program.mlx = mlx_init();
 	program.window.reference = mlx_new_window(program.mlx, 1900, 1080, "Hello world!");
 
 	program.player = ft_new_sprite(program.mlx, PLAYER);
-	program.player_position.x = 0; //maps.player.xp;
-	program.player_position.y = 0; //maps.player.yp;
+	program.player_position.x = 0; //player.xp;
+	program.player_position.y = 0; //player.yp;
 
 	program.floor = ft_new_sprite(program.mlx, TILE);
 		program.floor_position.x = 38;

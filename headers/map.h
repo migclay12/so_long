@@ -20,11 +20,11 @@ typedef struct s_map
 	int x;
 	int y;
 	t_collect collectible;
-	t_player player;
 } t_map;
 
 typedef struct s_things {
 	t_map		map;
+	t_player player;
 }	t_things;
 
 void	ft_print_error(char *str);
@@ -34,9 +34,18 @@ int		ft_map_name(char *map);
 int		ft_wall_check(t_map *map);
 //int ft_wall_check(t_things *things);
 int		ft_mid_wall_check(t_map *map);
-void	ft_val_collect(t_map *map);
+
+void	ft_val_path(t_map *map);
+void	ft_loop_check(t_map *map, int y, int x);
+void	ft_get_player(t_map *map, int *y, int *x);
+
+void	ft_val_collect(t_map *map, t_player *player);
 
 //int	ft_putchar(int c);
 //int	ft_putstr(char	*s);
 
+void	ft_validate(t_map *map);
+void ft_full_wall_check(t_map *map);
+
+void ft_all_map(t_things *m_store, t_map *map);
 #endif
