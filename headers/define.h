@@ -19,6 +19,9 @@
 # define ANIMATION_FRAMES 10
 
 //sprites
-# define TILE		"../sprites/tile.xpm"
-# define PLAYER		"../sprites/idle.xpm"
+# define TILE_XPM		    "../sprites/tile.xpm"
+# define PLAYER_XPM		    "../sprites/player.xpm"
+# define COLLECTIBLE_XPM    "../sprites/collect.xpm"
+# define WALL_XPM           "../sprites/wall.xpm"
+# define EXIT_XPM           "../sprites/exit.xpm"
 #endif

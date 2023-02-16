@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/16 14:02:15 by miggonza          #+#    #+#             */
+/*   Updated: 2023/02/16 14:16:57 by miggonza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../headers/so_long.h"
-//gcc map_read.c long_gnl/get_next_line.c long_gnl/get_next_line_utils.c utils.c main.c
 
 void ft_all_map(t_things *m_store, t_map *map)
 {
@@ -21,6 +32,11 @@ void ft_all_map(t_things *m_store, t_map *map)
 	ft_val_collect(&m_store->map, &m_store->player);
 
 	ft_validate(map);
+	m_store->window.size.y = m_store->map.y * 64;
+	m_store->window.size.x = m_store->map.x * 64;
+
+	printf("y %d\n", m_store->window.size.y);
+	printf("x %d\n", m_store->window.size.x);
 }
 
 int	main(void)

@@ -1,29 +1,32 @@
 #include "../headers/so_long.h"
 
-int ft_input(int key, void *param)
+int ft_input(int key, t_program *program)
 {
-	t_program *program = (t_program *)param;
-
-	// mlx function that clears the window
-	mlx_clear_window(program->mlx, program->window.reference);
-
 	if (key == D)
-		program->player_position.x += program->player.size.x;
+		ft_move(program, 1, 0);
 	else if (key == A)
-		program->player_position.x -= program->player.size.x;
+		ft_move(program, -1, 0);
 	else if (key == S)
-		program->player_position.y += program->player.size.y;
+		ft_move(program, 0, 1);
 	else if (key == W)
-		program->player_position.y -= program->player.size.y;
+		ft_move(program, 0, -1);
 	else if (key == ESC)
 		exit (0);
-
-	mlx_put_image_to_window(program->mlx, program->window.reference, program->player.reference, 
-			program->player_position.x, program->player_position.y);
-
 	printf("Key -> %d\n", key);
-
 	return (0);
+}
+
+void ft_move(t_program *program, int x, int y)
+{
+	if (program->map.matrix[program->player.y + y][program->player.x + x] == EMPTY
+		|| program->map.matrix[program->player.y + y][program->player.x + x] == COLLECTIBLE)
+	{
+		program->map.matrix[program->player.y][program->player.x] = EMPTY;
+		program->map.matrix[program->player.y + y][program->player.x + x] = START;
+		program->player.y += y;
+		program->player.x += x;
+	}
+	ft_put_images(&program->sprite, &program->vars, &program->map);
 }
 
 //ADDS MOVEMENT TO THE CHARACTER

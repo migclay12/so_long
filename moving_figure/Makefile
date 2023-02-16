@@ -1,12 +1,10 @@
 NAME = sample.out
-SRC = image.c main.c hooks.c
+SRC = image.c main.c hooks.c map_read.c val_char.c val_path.c window.c
 OBJ = $(SRC:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
 LINKS = -lmlx -framework OpenGL -framework AppKit
 
-#map_read.c main.c val_char.c val_path.c
-#MAP = ../map/map.a
 LIB = ../libft/libft.a
 
 all: ${NAME}

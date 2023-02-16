@@ -1,31 +1,7 @@
 #ifndef MAP_H
 # define MAP_H
 
-typedef struct s_collect
-{
-	int e;
-	int p;
-	int c;
-} t_collect;
-
-typedef struct s_player
-{
-	int xp;
-	int yp;
-} t_player;
-
-typedef struct s_map
-{
-	char **matrix;
-	int x;
-	int y;
-	t_collect collectible;
-} t_map;
-
-typedef struct s_things {
-	t_map		map;
-	t_player player;
-}	t_things;
+#include "move.h"
 
 void	ft_print_error(char *str);
 void	ft_map_size(int fd, t_map *size);
@@ -47,5 +23,5 @@ void	ft_val_collect(t_map *map, t_player *player);
 void	ft_validate(t_map *map);
 void ft_full_wall_check(t_map *map);
 
-void ft_all_map(t_things *m_store, t_map *map);
+void ft_all_map(t_program *m_store, t_map *map);
 #endif
