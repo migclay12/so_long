@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 16:28:17 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/15 18:38:43 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/02/20 18:11:36 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,60 +14,59 @@
 
 void	ft_loop_check(t_map *map, int y, int x)
 {
-	map->matrix[y][x] = START;
+	map->matrix[y][x] = PLAYER;
 	if (map->matrix[y - 1][x] != WALL
-		&& map->matrix[y - 1][x] != START)
+		&& map->matrix[y - 1][x] != PLAYER)
 		ft_loop_check(map, y - 1, x);
 	if (map->matrix[y + 1][x] != WALL
-		&& map->matrix[y + 1][x] != START)
+		&& map->matrix[y + 1][x] != PLAYER)
 		ft_loop_check(map, y + 1, x);
 	if (map->matrix[y][x - 1] != WALL
-		&& map->matrix[y][x - 1] != START)
+		&& map->matrix[y][x - 1] != PLAYER)
 		ft_loop_check(map, y, x - 1);
 	if (map->matrix[y][x + 1] != WALL
-		&& map->matrix[y][x + 1] != START)
+		&& map->matrix[y][x + 1] != PLAYER)
 		ft_loop_check(map, y, x + 1);
 }
 
-
-void ft_get_player(t_map *map, int *y, int *x)
+void	ft_get_player(t_map *map, int *y, int *x)
 {
-    *y = 0;
-    while (map->matrix[*y])
-    {
-        *x = 0;
-        while (map->matrix[*y][*x] != '\n')
-        {
-            if (map->matrix[*y][*x] == START)
+	*y = 0;
+	while (map->matrix[*y])
+	{
+		*x = 0;
+		while (map->matrix[*y][*x] != '\n')
+		{
+			if (map->matrix[*y][*x] == PLAYER)
 				return ;
-            (*x)++;
-        }
-        (*y)++;
-    }
+			(*x)++;
+		}
+		(*y)++;
+	}
 }
 
-void ft_val_path(t_map *map)
+void	ft_val_path(t_map *map)
 {
-    int x;
-    int y;
+	int	x;
+	int	y;
 
-    x = 0;
-    y = 0;
-    while (map->matrix[y])
-    {
-        while (map->matrix[y][x] != '\n')
-        {
-            if (map->matrix[y][x] == COLLECTIBLE)
+	x = 0;
+	y = 0;
+	while (map->matrix[y])
+	{
+		while (map->matrix[y][x] != '\n')
+		{
+			if (map->matrix[y][x] == COLLECTIBLE)
 				map->collectible.c++;
-            if (map->matrix[y][x] == EXIT)
+			if (map->matrix[y][x] == EXIT)
 				map->collectible.e++;
-            x++;
-        }
-        y++;
-        x = 0;
-    }
-    if(map->collectible.e > 0 || map->collectible.c > 0)
-        ft_print_error("Path not correct");
+			x++;
+		}
+		y++;
+		x = 0;
+	}
+	if (map->collectible.e > 0 || map->collectible.c > 0)
+		ft_print_error("Path not correct");
 }
 
 void	ft_validate(t_map *map)

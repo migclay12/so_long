@@ -1,47 +1,68 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   window.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/20 17:44:15 by miggonza          #+#    #+#             */
+/*   Updated: 2023/02/21 18:39:10 by miggonza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../headers/so_long.h"
 
-void ft_get_images(t_sprite *sprite, t_vars *vars)
+void	ft_get_images(t_sprite *sprite, t_vars *vars)
 {
-	int img_x;
-	int img_y;
-	sprite->floor = mlx_xpm_file_to_image(vars->mlx, TILE_XPM, &img_x, &img_y);
-	sprite->wall = mlx_xpm_file_to_image(vars->mlx, WALL_XPM, &img_x, &img_y);
-	sprite->collectiblle = mlx_xpm_file_to_image(vars->mlx, COLLECTIBLE_XPM, &img_x, &img_y);
-	sprite->exit = mlx_xpm_file_to_image(vars->mlx, EXIT_XPM, &img_x, &img_y);
-	sprite->player = mlx_xpm_file_to_image(vars->mlx, PLAYER_XPM, &img_x, &img_y);
+	sprite->floor = mlx_xpm_file_to_image(vars->mlx,
+			TILE_XPM, &vars->img_x, &vars->img_y);
+	sprite->wall = mlx_xpm_file_to_image(vars->mlx,
+			WALL_XPM, &vars->img_x, &vars->img_y);
+	sprite->collectiblle = mlx_xpm_file_to_image(vars->mlx,
+			COLLECTIBLE_XPM, &vars->img_x, &vars->img_y);
+	sprite->exit = mlx_xpm_file_to_image(vars->mlx,
+			EXIT_XPM, &vars->img_x, &vars->img_y);
+	sprite->player = mlx_xpm_file_to_image(vars->mlx,
+			PLAYER_XPM, &vars->img_x, &vars->img_y);
+	sprite->enemy = mlx_xpm_file_to_image(vars->mlx,
+			ENEMY_XPM, &vars->img_x, &vars->img_y);
 }
 
-void ft_put_images(t_sprite *sprite, t_vars *vars, t_map *map)
+void	ft_put_images(t_sprite *sprite, t_vars *vars, t_map *map, t_count *n)
 {
-	int	x;
-	int	y;
+	mlx_put_image_to_window(vars->mlx, vars->mlx_win,
+		sprite->floor, n->x * 64, n->y * 64);
+	if (map->matrix[n->y][n->x] == WALL)
+		mlx_put_image_to_window(vars->mlx, vars->mlx_win,
+			sprite->wall, n->x * 64, n->y * 64);
+	if (map->matrix[n->y][n->x] == COLLECTIBLE)
+		mlx_put_image_to_window(vars->mlx, vars->mlx_win,
+			sprite->collectiblle, n->x * 64, n->y * 64);
+	if (map->matrix[n->y][n->x] == EXIT)
+		mlx_put_image_to_window(vars->mlx, vars->mlx_win,
+			sprite->exit, n->x * 64, n->y * 64);
+	if (map->matrix[n->y][n->x] == PLAYER)
+		mlx_put_image_to_window(vars->mlx, vars->mlx_win,
+			sprite->player, n->x * 64, n->y * 64);
+	if (map->matrix[n->y][n->x] == ENEMY)
+		mlx_put_image_to_window(vars->mlx, vars->mlx_win,
+			sprite->enemy, n->x * 64, n->y * 64);
+}
 
-	x = 0;
-	y = 0;
-	while (map->matrix[y])
+void	ft_image_loop(t_sprite *sprite, t_vars *vars, t_map *map)
+{
+	t_count	n;
+
+	ft_memset(&n, 0, sizeof(t_count));
+	while (map->matrix[n.y])
 	{
-		while (map->matrix[y][x] != '\n')
+		while (map->matrix[n.y][n.x] != '\n')
 		{
-			//printf("%p\n", vars->mlx_win);
-
-			mlx_put_image_to_window(vars->mlx, vars->mlx_win,
-					sprite->floor, x * 64, y * 64);
-			if (map->matrix[y][x] == WALL)
-				mlx_put_image_to_window(vars->mlx, vars->mlx_win,
-					sprite->wall, x * 64, y * 64);
-			if (map->matrix[y][x] == COLLECTIBLE)
-				mlx_put_image_to_window(vars->mlx, vars->mlx_win,
-					sprite->collectiblle, x * 64, y * 64);
-			if (map->matrix[y][x] == EXIT)
-				mlx_put_image_to_window(vars->mlx, vars->mlx_win,
-					sprite->exit, x * 64, y * 64);
-			if (map->matrix[y][x] == START)
-				mlx_put_image_to_window(vars->mlx, vars->mlx_win,
-					sprite->player, x * 64, y * 64);
-			x++;
+			ft_put_images(sprite, vars, map, &n);
+			n.x++;
 		}
-		y++;
-		x = 0;
+		n.y++;
+		n.x = 0;
 	}
 }
 
