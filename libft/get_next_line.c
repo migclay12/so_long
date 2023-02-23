@@ -6,11 +6,11 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:17:36 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/09 19:35:42 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/02/22 14:07:57 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/so_long.h"
+#include "libft.h"
 
 char	*ft_stash(int fd, char *stash)
 {

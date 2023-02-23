@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.c                                           :+:      :+:    :+:   */
+/*   load_img.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:44:15 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/21 18:39:10 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/02/23 13:27:13 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/so_long.h"
+
+//DO ANOTHER VOID FOR EVERY PLAYER POSITION
 
 void	ft_get_images(t_sprite *sprite, t_vars *vars)
 {
@@ -18,7 +20,7 @@ void	ft_get_images(t_sprite *sprite, t_vars *vars)
 			TILE_XPM, &vars->img_x, &vars->img_y);
 	sprite->wall = mlx_xpm_file_to_image(vars->mlx,
 			WALL_XPM, &vars->img_x, &vars->img_y);
-	sprite->collectiblle = mlx_xpm_file_to_image(vars->mlx,
+	sprite->coll = mlx_xpm_file_to_image(vars->mlx,
 			COLLECTIBLE_XPM, &vars->img_x, &vars->img_y);
 	sprite->exit = mlx_xpm_file_to_image(vars->mlx,
 			EXIT_XPM, &vars->img_x, &vars->img_y);
@@ -26,6 +28,9 @@ void	ft_get_images(t_sprite *sprite, t_vars *vars)
 			PLAYER_XPM, &vars->img_x, &vars->img_y);
 	sprite->enemy = mlx_xpm_file_to_image(vars->mlx,
 			ENEMY_XPM, &vars->img_x, &vars->img_y);
+	sprite->open_exit = mlx_xpm_file_to_image(vars->mlx,
+			OPEN_XPM, &vars->img_x, &vars->img_y);
+	ft_sprite_error(sprite);
 }
 
 void	ft_put_images(t_sprite *sprite, t_vars *vars, t_map *map, t_count *n)
@@ -37,7 +42,7 @@ void	ft_put_images(t_sprite *sprite, t_vars *vars, t_map *map, t_count *n)
 			sprite->wall, n->x * 64, n->y * 64);
 	if (map->matrix[n->y][n->x] == COLLECTIBLE)
 		mlx_put_image_to_window(vars->mlx, vars->mlx_win,
-			sprite->collectiblle, n->x * 64, n->y * 64);
+			sprite->coll, n->x * 64, n->y * 64);
 	if (map->matrix[n->y][n->x] == EXIT)
 		mlx_put_image_to_window(vars->mlx, vars->mlx_win,
 			sprite->exit, n->x * 64, n->y * 64);

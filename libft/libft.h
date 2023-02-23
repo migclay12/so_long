@@ -16,8 +16,15 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 //libft
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
 int		ft_putstr(char	*s); //CHECK WHY 6???
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -54,12 +61,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 
-/*
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -69,16 +70,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-*/
 
 //GNL
-/*
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-# include <stdarg.h>
-# include <stdio.h>
-*/
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
 # endif
@@ -92,5 +85,15 @@ char	*ft_strjoin_gnl(char	*s1, char	*s2);
 void	*ft_calloc_gnl(size_t count, size_t size);
 void	ft_bzero_gnl(void *s, size_t n);
 char	*ft_strchr_gnl(char *str, int c);
+
+//PRINTF
+int	ft_strlen_pf(const char *s);
+int	ft_putchar_pf(int c);
+int	ft_putstr_pf(char *s);
+int	ft_putnbr(int n);
+int	ft_putnbr_base(unsigned long nbr, char *base);
+int	ft_pointr(void *nbr);
+int	ft_converthex(size_t nbr);
+int	ft_printf(char const *format, ...);
 
 #endif

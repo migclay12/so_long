@@ -6,11 +6,11 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:54:09 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/20 18:09:32 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/02/22 14:07:46 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/so_long.h"
+#include "libft.h"
 
 int	ft_strlen_gnl(char *s)
 {
@@ -70,7 +70,8 @@ char	*ft_strjoin_gnl(char *s1, char *s2)
 
 	if (!s1 || !s2)
 		return (0);
-	recive = ft_calloc_gnl(sizeof(char), (ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1));
+	recive = ft_calloc_gnl(sizeof(char),
+			(ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1));
 	if (!recive)
 		return (0);
 	i = 0;

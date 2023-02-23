@@ -6,12 +6,25 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:17:08 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/21 19:29:12 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/02/23 14:29:35 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/so_long.h"
 
+void	ft_text_screen(t_program *p)
+{
+	char	*c;
+
+	c = ft_itoa(p->moves);
+	mlx_string_put(p->vars.mlx, p->vars.mlx_win,
+		(p->window.x / 2) - 90, 50, 0x0b03fc, "Number of moves: ");
+	mlx_string_put(p->vars.mlx, p->vars.mlx_win,
+		(p->window.x / 2) + 90, 50, 0x0b03fc, c);
+	free(c);
+}
+
+//printf("Key -> %d\n", key);
 int	ft_input(int key, t_program *p)
 {
 	if (key == D || key == RIGHT)
@@ -24,14 +37,13 @@ int	ft_input(int key, t_program *p)
 		ft_move(p, 0, -1);
 	if (key == ESC)
 		exit (0);
-	//printf("Key -> %d\n", key);
 	return (0);
 }
 
 void	ft_move(t_program *p, int x, int y)
 {
 	if (p->map.matrix[p->player.y + y][p->player.x + x] == EXIT
-		&& p->map.collectible.c == 0)
+		&& p->map.comp.c == 0)
 		ft_close();
 	if (p->map.matrix[p->player.y + y][p->player.x + x] == ENEMY)
 		ft_close();
@@ -39,19 +51,17 @@ void	ft_move(t_program *p, int x, int y)
 		|| p->map.matrix[p->player.y + y][p->player.x + x] == COLLECTIBLE)
 	{
 		if (p->map.matrix[p->player.y + y][p->player.x + x] == COLLECTIBLE)
-			p->map.collectible.c--;
+			p->map.comp.c--;
 		p->map.matrix[p->player.y][p->player.x] = EMPTY;
 		p->map.matrix[p->player.y + y][p->player.x + x] = PLAYER;
 		p->player.y += y;
 		p->player.x += x;
 		p->moves++;
-		printf("FU %d\n", p->moves);
 	}
-	if (p->map.collectible.c == 0)
-		p->sprite.exit = mlx_xpm_file_to_image(p->vars.mlx, OPEN_XPM,
-				&p->vars.img_x, &p->vars.img_y);
+	if (p->map.comp.c == 0)
+		p->sprite.exit = p->sprite.open_exit;
 	ft_image_loop(&p->sprite, &p->vars, &p->map);
-	
+	ft_text_screen(p);
 }
 
 //ADDS MOVEMENT TO THE CHARACTER

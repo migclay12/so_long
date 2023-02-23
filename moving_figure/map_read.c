@@ -6,48 +6,56 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 18:48:18 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/20 17:36:07 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/02/23 13:28:22 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //ME GUARDA UN CARACTER DE MAS EN LA X
 #include "../headers/so_long.h"
 
-void	ft_print_error(char *str)
+static char	**ft_free_map(char **matrix, int i)
 {
-	ft_putstr("Error\n");
-	ft_putstr(str);
-	ft_putstr("\n");
-	exit(0);
+	while (i >= 0)
+	{
+		free(matrix[i]);
+		i--;
+	}
+	free(matrix);
+	return (0);
 }
 
 void	ft_map_size(int fd, t_map *size)
 {
-	char	*map;
+	char	*line;
 
 	size->y = 0;
-	map = get_next_line(fd);
-	size->x = ft_strlen(map);
-	while (map != NULL)
+	line = get_next_line(fd);
+	size->x = ft_strlen(line);
+	while (line != NULL)
 	{
-		free(map);
+		free(line);
 		size->y++;
-		map = get_next_line(fd);
-		if (map && size->x != (int)ft_strlen(map))
+		line = get_next_line(fd);
+		if (line && size->x != (int)ft_strlen(line))
 			ft_print_error("lines are not the same length");
 	}
 }
 
+//YOU HAD IT LIKE X
 char	**ft_read_map(int fd, t_map *map)
 {
-	int	lines;
+	int	col;
 
-	map->matrix = (char **)malloc(sizeof(char *) * map->x + 1);
-	lines = 0;
-	while (lines < map->x)
+	map->matrix = (char **)malloc(sizeof(char *) * map->y + 1);
+	if (!map->matrix)
+		return (0);
+	col = 0;
+	while (col < map->y)
 	{
-		map->matrix[lines] = get_next_line(fd);
-		lines++;
+		map->matrix[col] = get_next_line(fd);
+		if (!map->matrix[col])
+			return (ft_free_map(map->matrix, col));
+		col++;
 	}
 	return (map->matrix);
 }

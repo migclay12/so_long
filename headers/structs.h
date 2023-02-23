@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:04:01 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/21 19:24:26 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/02/23 13:19:32 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 # define STRUCTS_H
 
 //STRUCTURES
-typedef struct s_collect
+typedef struct s_comp
 {
 	int	e;
 	int	p;
 	int	c;
-}	t_collect;
+}	t_comp;
 
 typedef struct s_count {
 	int		x;
@@ -37,7 +37,7 @@ typedef struct s_map
 	char		**matrix;
 	int			x;
 	int			y;
-	t_collect	collectible;
+	t_comp		comp;
 }	t_map;
 
 typedef struct s_window {
@@ -58,10 +58,11 @@ typedef struct s_vars {
 typedef struct s_sprite {
 	void	*floor;
 	void	*wall;
-	void	*collectiblle;
+	void	*coll;
 	void	*exit;
 	void	*player;
 	void	*enemy;
+	void	*open_exit;
 }	t_sprite;
 
 /*

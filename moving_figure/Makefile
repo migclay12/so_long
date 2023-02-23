@@ -1,6 +1,6 @@
 NAME = so_long
-SRC = image.c main.c hooks.c map_read.c val_char.c \
-		val_path.c window.c wall_check.c map_check.c
+SRC = main.c hooks.c map_read.c val_char.c error.c\
+		val_path.c load_img.c wall_check.c map_check.c
 OBJ = $(SRC:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror

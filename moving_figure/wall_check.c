@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:35:19 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/20 17:36:20 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/02/23 13:38:26 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,4 @@ int	ft_mid_wall_check(t_map *map)
 		i++;
 	}
 	return (1);
-}
-
-void	ft_full_wall_check(t_map *map)
-{
-	int	wall;
-
-	wall = ft_wall_check(map);
-	if (wall != 1)
-		ft_print_error("map is not surrounded by walls");
-	wall = ft_mid_wall_check(map);
-	if (wall != 1)
-		ft_print_error("map is not surrounded by walls");
 }

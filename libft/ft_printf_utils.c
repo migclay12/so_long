@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   image.c                                            :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 17:23:54 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/21 19:22:58 by miggonza         ###   ########.fr       */
+/*   Created: 2022/10/05 17:36:36 by miggonza          #+#    #+#             */
+/*   Updated: 2023/02/22 14:08:02 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/so_long.h"
+#include "libft.h"
 
-//img.pixels  = mlx_get_data_addr(img.reference, 
-//&img.bits_per_pixel, &img.line_size, &img.endian);
-/*
-t_image	ft_new_sprite(void *mlx, char *path)
+int	ft_strlen_pf(const char *s)
 {
-	t_image		img;
+	int	count;
 
-	img.reference = mlx_xpm_file_to_image(mlx, path, &img.size.x, &img.size.y);
-	return (img);
+	count = 0;
+	while (s[count] != '\0')
+		count++;
+	return (count);
 }
-*/
+
+int	ft_putchar_pf(int c)
+{
+	write(1, &c, 1);
+	return (1);
+}
+
+int	ft_putstr_pf(char	*s)
+{
+	if (!s)
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
+	write(1, s, ft_strlen(s));
+	return (ft_strlen(s));
+}

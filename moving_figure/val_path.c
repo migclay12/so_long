@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 16:28:17 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/20 18:11:36 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/02/23 13:35:51 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 void	ft_loop_check(t_map *map, int y, int x)
 {
 	map->matrix[y][x] = PLAYER;
-	if (map->matrix[y - 1][x] != WALL
+	if (map->matrix[y - 1][x] != WALL && map->matrix[y - 1][x] != ENEMY
 		&& map->matrix[y - 1][x] != PLAYER)
 		ft_loop_check(map, y - 1, x);
-	if (map->matrix[y + 1][x] != WALL
+	if (map->matrix[y + 1][x] != WALL && map->matrix[y + 1][x] != ENEMY
 		&& map->matrix[y + 1][x] != PLAYER)
 		ft_loop_check(map, y + 1, x);
-	if (map->matrix[y][x - 1] != WALL
+	if (map->matrix[y][x - 1] != WALL && map->matrix[y][x - 1] != ENEMY
 		&& map->matrix[y][x - 1] != PLAYER)
 		ft_loop_check(map, y, x - 1);
-	if (map->matrix[y][x + 1] != WALL
+	if (map->matrix[y][x + 1] != WALL && map->matrix[y][x + 1] != ENEMY
 		&& map->matrix[y][x + 1] != PLAYER)
 		ft_loop_check(map, y, x + 1);
 }
@@ -57,16 +57,15 @@ void	ft_val_path(t_map *map)
 		while (map->matrix[y][x] != '\n')
 		{
 			if (map->matrix[y][x] == COLLECTIBLE)
-				map->collectible.c++;
+				map->comp.c++;
 			if (map->matrix[y][x] == EXIT)
-				map->collectible.e++;
+				map->comp.e++;
 			x++;
 		}
 		y++;
 		x = 0;
 	}
-	if (map->collectible.e > 0 || map->collectible.c > 0)
-		ft_print_error("Path not correct");
+	ft_path_error(map);
 }
 
 void	ft_validate(t_map *map)

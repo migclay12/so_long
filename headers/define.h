@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:06:40 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/21 16:50:49 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/02/23 14:25:13 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define LEFT	123
 
 //map
+# define VAL_CHAR		"01CEPB"
 # define EMPTY			'0'
 # define WALL			'1'
 # define COLLECTIBLE	'C'
