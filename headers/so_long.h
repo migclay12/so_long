@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:58:17 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/23 14:29:54 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:29:20 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void		ft_put_images(t_sprite *sprite, t_vars *vars, t_map *map, t_count *n);
 void        ft_image_loop(t_sprite *sprite, t_vars *vars, t_map *map);
 void		ft_move(t_program *p, int x, int y);
 void		ft_text_screen(t_program *p);
+
+void		ft_wall_loop(t_sprite *sprite, t_vars *vars, t_map *map);
 
 //int			ft_update (void *param);
 

@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:06:40 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/23 14:25:13 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/07 18:17:15 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # define RIGHT	124
 # define DOWN	125
 # define LEFT	123
+# define IMG_SZ 64
 
 //map
 # define VAL_CHAR		"01CEPB"
@@ -36,11 +37,14 @@
 # define ANIMATION_FRAMES 10
 
 //sprites
-# define TILE_XPM			"../sprites/tile.xpm"
+# define TILE_XPM			"../sprites/grass.xpm"
 # define PLAYER_XPM			"../sprites/player.xpm"
 # define COLLECTIBLE_XPM	"../sprites/collect.xpm"
-# define WALL_XPM			"../sprites/wall.xpm"
-# define EXIT_XPM			"../sprites/exit.xpm"
+# define WALL0_XPM			"../sprites/wall0.xpm"
+# define WALL1_XPM			"../sprites/wall1.xpm"
+# define WALL2_XPM			"../sprites/wall2.xpm"
+# define WALL3_XPM			"../sprites/wall3.xpm"
+# define EXIT_XPM			"../sprites/exit0.xpm"
 # define OPEN_XPM           "../sprites/open.xpm"
 # define ENEMY_XPM			"../sprites/enemy.xpm"
 

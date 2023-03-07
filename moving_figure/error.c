@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:25:56 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/23 14:23:07 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/07 12:58:27 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ft_sprite_error(t_sprite *sprite)
 {
 	if (!sprite->floor)
 		ft_print_error("Floor sprite has not loadeed propperly");
-	if (!sprite->wall)
+	if (!sprite->wall.wall0)
 		ft_print_error("Wall sprite has not loadeed propperly");
 	if (!sprite->coll)
 		ft_print_error("Collectible sprite has not loadeed propperly");
@@ -72,3 +72,14 @@ void	ft_sprite_error(t_sprite *sprite)
 	if (!sprite->enemy)
 		ft_print_error("Enemy sprite has not loadeed propperly");
 }
+
+/*
+if (!sprite->wall.wall0)
+		ft_print_error("Wall sprite has not loadeed propperly");
+	if (!sprite->wall.wall1)
+		ft_print_error("Wall sprite has not loadeed propperly");
+	if (!sprite->wall.wall2)
+		ft_print_error("Wall sprite has not loadeed propperly");
+	if (!sprite->wall.wall3)
+		ft_print_error("Wall sprite has not loadeed propperly");
+*/

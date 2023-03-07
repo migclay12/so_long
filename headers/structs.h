@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:04:01 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/23 13:19:32 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/07 12:57:30 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,23 @@ typedef struct s_vars {
 	int		img_y;
 }	t_vars;
 
+typedef struct s_wall
+{
+	void	*wall0;
+	void	*wall1;
+	void	*wall2;
+	void	*wall3;
+} t_wall;
+
 typedef struct s_sprite {
 	void	*floor;
-	void	*wall;
+	//void	*wall;
 	void	*coll;
 	void	*exit;
 	void	*player;
 	void	*enemy;
 	void	*open_exit;
+	t_wall	wall;
 }	t_sprite;
 
 /*

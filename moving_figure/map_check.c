@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:33:09 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/23 13:39:14 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/07 18:18:02 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ void	ft_all_map(t_program *m_store, t_map *map, char *name)
 	ft_val_collect(&m_store->map, &m_store->player);
 	ft_char_error(m_store);
 	ft_validate(map);
-	m_store->window.y = m_store->map.y * 64;
-	m_store->window.x = (m_store->map.x - 1) * 64;
+	m_store->window.y = m_store->map.y * IMG_SZ;
+	m_store->window.x = (m_store->map.x - 1) * IMG_SZ;
 }

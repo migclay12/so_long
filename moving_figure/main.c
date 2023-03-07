@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:25:25 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/23 14:30:31 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:32:06 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	main(void)
 			p.window.y, "Mad Ting");
 	ft_get_images(&p.sprite, &p.vars);
 	ft_image_loop(&p.sprite, &p.vars, &p.map);
+	//ft_wall_loop(&p.sprite, &p.vars, &p.map);
 	ft_text_screen(&p);
 	mlx_key_hook(p.vars.mlx_win, *ft_input, &p);
 	mlx_hook(p.vars.mlx_win, 17, 0, ft_close, 0);

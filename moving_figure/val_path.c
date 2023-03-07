@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 16:28:17 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/23 13:35:51 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/07 12:29:25 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_val_path(t_map *map)
 
 	x = 0;
 	y = 0;
-	while (map->matrix[y])
+	while (y < map->y)
 	{
 		while (map->matrix[y][x] != '\n')
 		{

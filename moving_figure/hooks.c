@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:17:08 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/23 14:29:35 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/07 18:19:17 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	ft_move(t_program *p, int x, int y)
 		ft_close();
 	if (p->map.matrix[p->player.y + y][p->player.x + x] == ENEMY)
 		ft_close();
+	// if (p->map.matrix[p->player.y + y][p->player.x + x] != WALL)
 	if (p->map.matrix[p->player.y + y][p->player.x + x] == EMPTY
 		|| p->map.matrix[p->player.y + y][p->player.x + x] == COLLECTIBLE)
 	{
