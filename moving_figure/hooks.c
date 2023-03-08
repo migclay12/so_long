@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:17:08 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/07 18:19:17 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:50:02 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	ft_text_screen(t_program *p)
 
 	c = ft_itoa(p->moves);
 	mlx_string_put(p->vars.mlx, p->vars.mlx_win,
-		(p->window.x / 2) - 90, 50, 0x0b03fc, "Number of moves: ");
+		(p->window.x / 2) - 90, 50, 0xffffff, "Number of moves: ");
 	mlx_string_put(p->vars.mlx, p->vars.mlx_win,
-		(p->window.x / 2) + 90, 50, 0x0b03fc, c);
+		(p->window.x / 2) + 90, 50, 0xffffff, c);
 	free(c);
 }
 

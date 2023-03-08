@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:25:56 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/07 12:58:27 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:05:26 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	ft_sprite_error(t_sprite *sprite)
 		ft_print_error("Open exit sprite has not loadeed propperly");
 	if (!sprite->exit)
 		ft_print_error("Exit sprite has not loadeed propperly");
-	if (!sprite->player)
+	if (!sprite->player.idle0)
 		ft_print_error("Player sprite has not loadeed propperly");
 	if (!sprite->enemy)
 		ft_print_error("Enemy sprite has not loadeed propperly");

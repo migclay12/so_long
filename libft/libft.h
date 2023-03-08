@@ -87,13 +87,13 @@ void	ft_bzero_gnl(void *s, size_t n);
 char	*ft_strchr_gnl(char *str, int c);
 
 //PRINTF
-int	ft_strlen_pf(const char *s);
-int	ft_putchar_pf(int c);
-int	ft_putstr_pf(char *s);
-int	ft_putnbr(int n);
-int	ft_putnbr_base(unsigned long nbr, char *base);
-int	ft_pointr(void *nbr);
-int	ft_converthex(size_t nbr);
-int	ft_printf(char const *format, ...);
+int		ft_strlen_pf(const char *s);
+int		ft_putchar_pf(int c);
+int		ft_putstr_pf(char *s);
+int		ft_putnbr(int n);
+int		ft_putnbr_base(unsigned long nbr, char *base);
+int		ft_pointr(void *nbr);
+int		ft_converthex(size_t nbr);
+int		ft_printf(char const *format, ...);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:58:17 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/07 13:29:20 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:50:23 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include	"headers.h"
 # include	"../libft/libft.h"
 
-int ft_close();
+int			ft_close();
 
 //MAP
 void		ft_print_error(char *str);
@@ -40,10 +40,11 @@ void		ft_all_map(t_program *m_store, t_map *map, char *name);
 
 //MOVE
 int			ft_input(int key, t_program *program);
-void        ft_sprite_error(t_sprite *sprite);
+void		ft_sprite_error(t_sprite *sprite);
 void		ft_get_images(t_sprite *sprite, t_vars *vars);
-void		ft_put_images(t_sprite *sprite, t_vars *vars, t_map *map, t_count *n);
-void        ft_image_loop(t_sprite *sprite, t_vars *vars, t_map *map);
+void		ft_put_images(t_sprite *sprite, t_vars *vars,
+				t_map *map, t_count *n);
+void		ft_image_loop(t_sprite *sprite, t_vars *vars, t_map *map);
 void		ft_move(t_program *p, int x, int y);
 void		ft_text_screen(t_program *p);
 

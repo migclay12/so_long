@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:06:40 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/07 18:17:15 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:58:23 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,19 @@
 # define ANIMATION_FRAMES 10
 
 //sprites
-# define TILE_XPM			"../sprites/grass.xpm"
-# define PLAYER_XPM			"../sprites/player.xpm"
-# define COLLECTIBLE_XPM	"../sprites/collect.xpm"
+# define TILE_XPM			"../sprites/tile.xpm"
+//# define PLAYER_XPM		"../sprites/player/bandit.xpm"
+# define PLAYER0_XPM		"../sprites/player/pidle0.xpm"
+# define PLAYER1_XPM		"../sprites/player/pidle1.xpm"
+# define PLAYER2_XPM		"../sprites/player/pidle2.xpm"
+# define PLAYER3_XPM		"../sprites/player/pidle3.xpm"
+# define COLLECTIBLE_XPM	"../sprites/skull.xpm"
 # define WALL0_XPM			"../sprites/wall0.xpm"
 # define WALL1_XPM			"../sprites/wall1.xpm"
 # define WALL2_XPM			"../sprites/wall2.xpm"
 # define WALL3_XPM			"../sprites/wall3.xpm"
-# define EXIT_XPM			"../sprites/exit0.xpm"
-# define OPEN_XPM           "../sprites/open.xpm"
-# define ENEMY_XPM			"../sprites/enemy.xpm"
+# define EXIT_XPM			"../sprites/wizz.xpm"
+# define OPEN_XPM           "../sprites/open_wizz.xpm"
+# define ENEMY_XPM			"../sprites/knight.xpm"
 
 #endif

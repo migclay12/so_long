@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:04:01 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/07 12:57:30 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:04:41 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ typedef struct s_player
 {
 	int	x;
 	int	y;
+	void	*idle0;
+	void	*idle1;
+	void	*idle2;
+	void	*idle3;
 }	t_player;
 
 typedef struct s_map
@@ -61,16 +65,16 @@ typedef struct s_wall
 	void	*wall1;
 	void	*wall2;
 	void	*wall3;
-} t_wall;
+}	t_wall;
 
 typedef struct s_sprite {
 	void	*floor;
-	//void	*wall;
 	void	*coll;
 	void	*exit;
-	void	*player;
+	//void	*player;
 	void	*enemy;
 	void	*open_exit;
+	t_player	player;
 	t_wall	wall;
 }	t_sprite;
 
