@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:04:01 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/08 19:04:41 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:55:07 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ typedef struct s_comp
 	int	e;
 	int	p;
 	int	c;
+	int exit_x;
+	int exit_y;
 }	t_comp;
 
 typedef struct s_count {
@@ -28,12 +30,11 @@ typedef struct s_count {
 
 typedef struct s_player
 {
-	int	x;
-	int	y;
-	void	*idle0;
-	void	*idle1;
-	void	*idle2;
-	void	*idle3;
+	int		x;
+	int		y;
+	void	*player;
+	void	*idle[4];
+	void	*idlel0;
 }	t_player;
 
 typedef struct s_map
@@ -70,10 +71,11 @@ typedef struct s_wall
 typedef struct s_sprite {
 	void	*floor;
 	void	*coll;
-	void	*exit;
-	//void	*player;
+	void	*knight;
 	void	*enemy;
 	void	*open_exit;
+	void	*m_exit;
+	void	*exit[20];
 	t_player	player;
 	t_wall	wall;
 }	t_sprite;
@@ -98,6 +100,7 @@ typedef struct s_program {
 	t_vars		vars;
 	t_sprite	sprite;
 	t_count		count;
+	int			time;
 	int			moves;
 }	t_program;
 

@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:58:17 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/08 19:50:23 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:52:53 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void		ft_wall_error(t_map *map);
 void		ft_all_map(t_program *m_store, t_map *map, char *name);
 
 //MOVE
+//int			ft_input(int key, t_program *program, t_sprite *sprite);
 int			ft_input(int key, t_program *program);
 void		ft_sprite_error(t_sprite *sprite);
 void		ft_get_images(t_sprite *sprite, t_vars *vars);
@@ -51,5 +52,9 @@ void		ft_text_screen(t_program *p);
 void		ft_wall_loop(t_sprite *sprite, t_vars *vars, t_map *map);
 
 //int			ft_update (void *param);
+//void		player_idle(t_player *player);
+//int			update(t_program *game);
+int			ft_anim(t_program *p);
+void		ft_win(t_program *p);
 
 #endif

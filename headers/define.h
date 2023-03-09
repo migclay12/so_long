@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:06:40 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/08 18:58:23 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:45:23 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # define EMPTY			'0'
 # define WALL			'1'
 # define COLLECTIBLE	'C'
-# define EXIT			'E'
+# define EXIT_CHAR		'E'
 # define PLAYER			'P'
 # define ENEMY			'B'
 
@@ -38,18 +38,44 @@
 
 //sprites
 # define TILE_XPM			"../sprites/tile.xpm"
-//# define PLAYER_XPM		"../sprites/player/bandit.xpm"
-# define PLAYER0_XPM		"../sprites/player/pidle0.xpm"
-# define PLAYER1_XPM		"../sprites/player/pidle1.xpm"
-# define PLAYER2_XPM		"../sprites/player/pidle2.xpm"
-# define PLAYER3_XPM		"../sprites/player/pidle3.xpm"
 # define COLLECTIBLE_XPM	"../sprites/skull.xpm"
+# define OPEN_XPM           "../sprites/open_wizz.xpm"
+# define ENEMY_XPM			"../sprites/knight.xpm"
+# define EXIT_XPM			"../sprites/main_exit.xpm"
 # define WALL0_XPM			"../sprites/wall0.xpm"
 # define WALL1_XPM			"../sprites/wall1.xpm"
 # define WALL2_XPM			"../sprites/wall2.xpm"
 # define WALL3_XPM			"../sprites/wall3.xpm"
-# define EXIT_XPM			"../sprites/wizz.xpm"
-# define OPEN_XPM           "../sprites/open_wizz.xpm"
-# define ENEMY_XPM			"../sprites/knight.xpm"
+
+//# define PLAYER_XPM		"../sprites/player/bandit.xpm"
+# define KNIGHT_XPM			"../sprites/player/pidle0.xpm"
+# define PLAYER0_XPM		"../sprites/player/pidle0.xpm"
+# define PLAYER1_XPM		"../sprites/player/pidle1.xpm"
+# define PLAYER2_XPM		"../sprites/player/pidle2.xpm"
+# define PLAYER3_XPM		"../sprites/player/pidle3.xpm"
+# define PLAYERL0_XPM		"../sprites/player/pidlel0.xpm"
+
+/*
+# define EXIT0				"../sprites/exit/exit0.xpm"
+# define EXIT1				"../sprites/exit/exit1.xpm"
+# define EXIT2				"../sprites/exit/exit2.xpm"
+# define EXIT3			    "../sprites/exit/exit3.xpm"
+# define EXIT4			    "../sprites/exit/exit4.xpm"
+# define EXIT5			    "../sprites/exit/exit5.xpm"
+# define EXIT6			    "../sprites/exit/exit6.xpm"
+# define EXIT7			    "../sprites/exit/exit7.xpm"
+# define EXIT8			    "../sprites/exit/exit8.xpm"
+# define EXIT9			    "../sprites/exit/exit9.xpm"
+# define EXIT10			    "../sprites/exit/exit10.xpm"
+# define EXIT11			    "../sprites/exit/exit11.xpm"
+# define EXIT12			    "../sprites/exit/exit12.xpm"
+# define EXIT13			    "../sprites/exit/exit13.xpm"
+# define EXIT14			    "../sprites/exit/exit14.xpm"
+# define EXIT15			    "../sprites/exit/exit15.xpm"
+# define EXIT16			    "../sprites/exit/exit16.xpm"
+# define EXIT17			    "../sprites/exit/exit17.xpm"
+# define EXIT18			    "../sprites/exit/exit18.xpm"
+# define EXIT19			    "../sprites/exit/exit19.xpm"
+*/
 
 #endif

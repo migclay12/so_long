@@ -6,13 +6,11 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:44:15 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/08 19:05:17 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/09 20:45:24 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/so_long.h"
-
-//DO ANOTHER VOID FOR EVERY PLAYER POSITION
 
 void	ft_save_wall(t_vars *vars, t_sprite *sprite)
 {
@@ -28,14 +26,43 @@ void	ft_save_wall(t_vars *vars, t_sprite *sprite)
 
 void	ft_save_player(t_vars *vars, t_sprite *sprite)
 {
-	sprite->player.idle0 = mlx_xpm_file_to_image(vars->mlx,
+	void	**xpm;
+
+	xpm = &sprite->player.player;
+	sprite->player.player = mlx_xpm_file_to_image(vars->mlx,
 			PLAYER0_XPM, &vars->img_x, &vars->img_y);
-	sprite->player.idle1 = mlx_xpm_file_to_image(vars->mlx,
+	sprite->player.idle[0] = mlx_xpm_file_to_image(vars->mlx,
+			PLAYER0_XPM, &vars->img_x, &vars->img_y);
+	sprite->player.idle[1] = mlx_xpm_file_to_image(vars->mlx,
 			PLAYER1_XPM, &vars->img_x, &vars->img_y);
-	sprite->player.idle2 = mlx_xpm_file_to_image(vars->mlx,
+	sprite->player.idle[2] = mlx_xpm_file_to_image(vars->mlx,
 			PLAYER2_XPM, &vars->img_x, &vars->img_y);
-	sprite->player.idle3 = mlx_xpm_file_to_image(vars->mlx,
+	sprite->player.idle[3] = mlx_xpm_file_to_image(vars->mlx,
 			PLAYER3_XPM, &vars->img_x, &vars->img_y);
+	sprite->player.idlel0 = mlx_xpm_file_to_image(vars->mlx,
+			PLAYERL0_XPM, &vars->img_x, &vars->img_y);
+}
+
+void	ft_save_exit(t_vars *vars, t_sprite *sprite)
+{
+	int		i;
+	char	*c;
+	char	*exit;
+	char	*exit2;
+
+	i = 0;
+	while (i < 20)
+	{
+		c = ft_itoa(i);
+		exit = ft_strjoin("../sprites/exit/exit", c);
+		exit2 = ft_strjoin(exit, ".xpm");
+		sprite->exit[i] = mlx_xpm_file_to_image(vars->mlx,
+				exit2, &vars->img_x, &vars->img_y);
+		i++;
+		free(exit);
+		free(exit2);
+		free(c);
+	}
 }
 
 void	ft_get_images(t_sprite *sprite, t_vars *vars)
@@ -44,7 +71,7 @@ void	ft_get_images(t_sprite *sprite, t_vars *vars)
 			TILE_XPM, &vars->img_x, &vars->img_y);
 	sprite->coll = mlx_xpm_file_to_image(vars->mlx,
 			COLLECTIBLE_XPM, &vars->img_x, &vars->img_y);
-	sprite->exit = mlx_xpm_file_to_image(vars->mlx,
+	sprite->m_exit = mlx_xpm_file_to_image(vars->mlx,
 			EXIT_XPM, &vars->img_x, &vars->img_y);
 	// sprite->player.idle0 = mlx_xpm_file_to_image(vars->mlx,
 	// 		PLAYER0_XPM, &vars->img_x, &vars->img_y);
@@ -52,6 +79,7 @@ void	ft_get_images(t_sprite *sprite, t_vars *vars)
 			ENEMY_XPM, &vars->img_x, &vars->img_y);
 	sprite->open_exit = mlx_xpm_file_to_image(vars->mlx,
 			OPEN_XPM, &vars->img_x, &vars->img_y);
+	ft_save_exit(vars, sprite);
 	ft_save_player(vars, sprite);
 	ft_save_wall(vars, sprite);
 	ft_sprite_error(sprite);
@@ -87,12 +115,12 @@ void	ft_put_images(t_sprite *sprite, t_vars *vars, t_map *map, t_count *n)
 	if (map->matrix[n->y][n->x] == COLLECTIBLE)
 		mlx_put_image_to_window(vars->mlx, vars->mlx_win,
 			sprite->coll, n->x * IMG_SZ, n->y * IMG_SZ);
-	if (map->matrix[n->y][n->x] == EXIT)
+	if (map->matrix[n->y][n->x] == EXIT_CHAR)
 		mlx_put_image_to_window(vars->mlx, vars->mlx_win,
-			sprite->exit, n->x * IMG_SZ, n->y * IMG_SZ);
+			sprite->m_exit, n->x * IMG_SZ, n->y * IMG_SZ);
 	if (map->matrix[n->y][n->x] == PLAYER)
 		mlx_put_image_to_window(vars->mlx, vars->mlx_win,
-			sprite->player.idle0, n->x * IMG_SZ, n->y * IMG_SZ);
+			sprite->player.player, n->x * IMG_SZ, n->y * IMG_SZ);
 	if (map->matrix[n->y][n->x] == ENEMY)
 		mlx_put_image_to_window(vars->mlx, vars->mlx_win,
 			sprite->enemy, n->x * IMG_SZ, n->y * IMG_SZ);

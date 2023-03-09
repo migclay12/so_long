@@ -1,7 +1,7 @@
 NAME=libft.a
 CC=cc
 CFLAGS=-Wall -Wextra -Werror
-OPTIONS= -c -I.
+#OPTIONS= -c -I.
 AR= ar rc
 FUNCTIONS=	ft_atoi.c ft_bzero.c ft_calloc.c ft_split.c ft_putstr.c ft_itoa.c \
 			\

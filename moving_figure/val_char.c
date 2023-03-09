@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 17:12:30 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/08 17:30:31 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:57:32 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,16 @@ void	ft_val_collect(t_map *map, t_player *player)
 	{
 		while (map->matrix[y][x] != '\n')
 		{
-			//VAL CHAR NOT WORKING
-			//if (!ft_strchr(VAL_CHAR, map->matrix[y][x]))
 			if (!ft_str(VAL_CHAR, map->matrix[y][x]))
 				ft_print_error("Invalid char in map");
 			if (map->matrix[y][x] == COLLECTIBLE)
 				map->comp.c++;
-			if (map->matrix[y][x] == EXIT)
+			if (map->matrix[y][x] == EXIT_CHAR)
+			{
 				map->comp.e++;
+				map->comp.exit_x = x;
+				map->comp.exit_y = y;
+			}	
 			if (map->matrix[y][x] == PLAYER)
 				get_player(map, player, y, x);
 			x++;

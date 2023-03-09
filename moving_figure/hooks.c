@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:17:08 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/08 19:50:02 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/09 20:25:40 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,26 @@ void	ft_text_screen(t_program *p)
 		(p->window.x / 2) - 90, 50, 0xffffff, "Number of moves: ");
 	mlx_string_put(p->vars.mlx, p->vars.mlx_win,
 		(p->window.x / 2) + 90, 50, 0xffffff, c);
+	ft_printf("Moves: %s\n", c);
 	free(c);
 }
 
-//printf("Key -> %d\n", key);
 int	ft_input(int key, t_program *p)
 {
 	if (key == D || key == RIGHT)
+	{
+		p->sprite.player.player = p->sprite.player.idle[0];
+		//if (p->sprite.player.player == NULL)
+			//ft_print_error("Map error: Cannot load R Sprites");
 		ft_move(p, 1, 0);
+	}
 	if (key == A || key == LEFT)
+	{
+		p->sprite.player.player = p->sprite.player.idlel0;
+		//if (p->sprite.player.player == NULL)
+			//ft_print_error("Map error: Cannot load L Sprites");
 		ft_move(p, -1, 0);
+	}
 	if (key == S || key == DOWN)
 		ft_move(p, 0, 1);
 	if (key == W || key == UP)
@@ -42,12 +52,11 @@ int	ft_input(int key, t_program *p)
 
 void	ft_move(t_program *p, int x, int y)
 {
-	if (p->map.matrix[p->player.y + y][p->player.x + x] == EXIT
+	if (p->map.matrix[p->player.y + y][p->player.x + x] == EXIT_CHAR
 		&& p->map.comp.c == 0)
 		ft_close();
 	if (p->map.matrix[p->player.y + y][p->player.x + x] == ENEMY)
 		ft_close();
-	// if (p->map.matrix[p->player.y + y][p->player.x + x] != WALL)
 	if (p->map.matrix[p->player.y + y][p->player.x + x] == EMPTY
 		|| p->map.matrix[p->player.y + y][p->player.x + x] == COLLECTIBLE)
 	{
@@ -59,8 +68,6 @@ void	ft_move(t_program *p, int x, int y)
 		p->player.x += x;
 		p->moves++;
 	}
-	if (p->map.comp.c == 0)
-		p->sprite.exit = p->sprite.open_exit;
 	ft_image_loop(&p->sprite, &p->vars, &p->map);
 	ft_text_screen(p);
 }
