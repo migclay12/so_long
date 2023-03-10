@@ -1,8 +1,8 @@
 NAME=libft.a
-CC=cc
+CC=@cc
 CFLAGS=-Wall -Wextra -Werror
-#OPTIONS= -c -I.
-AR= ar rc
+OPTIONS= -c -I.
+AR= @ar rc
 FUNCTIONS=	ft_atoi.c ft_bzero.c ft_calloc.c ft_split.c ft_putstr.c ft_itoa.c \
 			\
 			ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
@@ -29,10 +29,10 @@ ${NAME}: ${OBJECTS}
 		${AR} ${NAME} ${OBJECTS}
 
 clean:
-		rm -f ${OBJECTS} 
+		@rm -f ${OBJECTS} 
 
 fclean: clean
-		rm -f ${NAME}
+		@rm -f ${NAME}
 
 re: fclean all
 

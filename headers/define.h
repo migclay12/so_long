@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:06:40 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/09 19:45:23 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/10 15:44:43 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,14 @@
 # define EXIT_CHAR		'E'
 # define PLAYER			'P'
 # define ENEMY			'B'
+# define DEAD			'D'
+# define EXIT_SPRITE    0
 
 # define ANIMATION_FRAMES 10
 
 //sprites
 # define TILE_XPM			"../sprites/tile.xpm"
 # define COLLECTIBLE_XPM	"../sprites/skull.xpm"
-# define OPEN_XPM           "../sprites/open_wizz.xpm"
 # define ENEMY_XPM			"../sprites/knight.xpm"
 # define EXIT_XPM			"../sprites/main_exit.xpm"
 # define WALL0_XPM			"../sprites/wall0.xpm"

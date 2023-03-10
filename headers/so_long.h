@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:58:17 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/09 19:52:53 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:47:33 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ void		ft_wall_loop(t_sprite *sprite, t_vars *vars, t_map *map);
 //int			update(t_program *game);
 int			ft_anim(t_program *p);
 void		ft_win(t_program *p);
+void		ft_die(t_program *p);
 
 #endif

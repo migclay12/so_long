@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:25:25 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/09 20:27:33 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/10 13:56:28 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	ft_close(void)
 	exit(0);
 }
 //DO ERRORS FOR SPRITES
+//COULD CHANGE THE EXIT SPRITE FUNCTION SO THAT IT WORKS FOR ALL??
 int	main(void)
 {
 	t_program	p;

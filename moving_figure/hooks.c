@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:17:08 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/09 20:25:40 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:47:47 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ int	ft_input(int key, t_program *p)
 {
 	if (key == D || key == RIGHT)
 	{
-		p->sprite.player.player = p->sprite.player.idle[0];
+		p->sprite.player = p->sprite.idle[0];
 		//if (p->sprite.player.player == NULL)
 			//ft_print_error("Map error: Cannot load R Sprites");
 		ft_move(p, 1, 0);
 	}
 	if (key == A || key == LEFT)
 	{
-		p->sprite.player.player = p->sprite.player.idlel0;
+		p->sprite.player = p->sprite.idlel0;
 		//if (p->sprite.player.player == NULL)
 			//ft_print_error("Map error: Cannot load L Sprites");
 		ft_move(p, -1, 0);
@@ -56,7 +56,7 @@ void	ft_move(t_program *p, int x, int y)
 		&& p->map.comp.c == 0)
 		ft_close();
 	if (p->map.matrix[p->player.y + y][p->player.x + x] == ENEMY)
-		ft_close();
+		p->sprite.player = p->sprite.dead[0];
 	if (p->map.matrix[p->player.y + y][p->player.x + x] == EMPTY
 		|| p->map.matrix[p->player.y + y][p->player.x + x] == COLLECTIBLE)
 	{

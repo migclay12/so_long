@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:17:48 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/09 20:20:17 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/10 15:46:01 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_anim(t_program *p)
 	p->time++;
 	if (p->time % 600 == 0)
 		ft_win(p);
+	if (p->time % 1500 == 0)
+		ft_die(p);
 	return (0);
 }
 
@@ -32,13 +34,34 @@ void	ft_win(t_program *p)
 				p->sprite.floor, p->map.comp.exit_x * IMG_SZ,
 				p->map.comp.exit_y * IMG_SZ);
 			mlx_put_image_to_window(p->vars.mlx, p->vars.mlx_win,
-				p->sprite.exit[cont], p->map.comp.exit_x * IMG_SZ,
+				p->sprite.sprites[EXIT_SPRITE][cont], p->map.comp.exit_x * IMG_SZ,
 				p->map.comp.exit_y * IMG_SZ);
+				//p->sprite.exit[cont], p->map.comp.exit_x * IMG_SZ,
 			cont++;
 		}
 		p->sprite.m_exit = p->sprite.exit[19];
 	}
 }
+
+void	ft_die(t_program *p)
+{
+	static int	cont = 0;
+	if (p->sprite.player == p->sprite.dead[0])
+	{
+		if (cont < 6)
+		{
+			mlx_put_image_to_window(p->vars.mlx, p->vars.mlx_win,
+				p->sprite.floor, p->player.x * IMG_SZ,
+				p->player.y * IMG_SZ);
+			mlx_put_image_to_window(p->vars.mlx, p->vars.mlx_win,
+				p->sprite.dead[cont], p->player.x * IMG_SZ,
+				p->player.y * IMG_SZ);
+			cont++;
+		}
+		//p->sprite.player = p->sprite.dead[5];
+	}
+}
+
 
 /*
 static void	player_animation(t_player *player)
