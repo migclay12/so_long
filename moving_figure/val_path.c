@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 16:28:17 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/09 18:50:24 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:27:13 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_val_path(t_map *map)
 		{
 			if (map->matrix[y][x] == COLLECTIBLE)
 				map->comp.c++;
-			if (map->matrix[y][x] == EXIT_CHAR)
+			if (map->matrix[y][x] == EXIT)
 				map->comp.e++;
 			x++;
 		}

@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:58:17 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/10 14:47:33 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:55:44 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,16 @@ void		ft_all_map(t_program *m_store, t_map *map, char *name);
 //MOVE
 //int			ft_input(int key, t_program *program, t_sprite *sprite);
 int			ft_input(int key, t_program *program);
-void		ft_sprite_error(t_sprite *sprite);
-void		ft_get_images(t_sprite *sprite, t_vars *vars);
-void		ft_put_images(t_sprite *sprite, t_vars *vars,
+void		ft_sprite_error(t_program *p);
+void		ft_get_images(t_program *p);
+//void		ft_get_images(t_program *p, t_vars *vars);
+void		ft_put_images(t_program *p, t_vars *vars,
 				t_map *map, t_count *n);
-void		ft_image_loop(t_sprite *sprite, t_vars *vars, t_map *map);
+void		ft_image_loop(t_program *p, t_vars *vars, t_map *map);
 void		ft_move(t_program *p, int x, int y);
 void		ft_text_screen(t_program *p);
 
-void		ft_wall_loop(t_sprite *sprite, t_vars *vars, t_map *map);
+//void		ft_wall_loop(t_sprite *sprite, t_vars *vars, t_map *map);
 
 //int			ft_update (void *param);
 //void		player_idle(t_player *player);

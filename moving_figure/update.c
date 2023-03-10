@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:17:48 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/10 15:46:01 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:57:43 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,30 +31,29 @@ void	ft_win(t_program *p)
 		if (cont < 20)
 		{
 			mlx_put_image_to_window(p->vars.mlx, p->vars.mlx_win,
-				p->sprite.floor, p->map.comp.exit_x * IMG_SZ,
+				p->sprites[FLOOR_SP][0], p->map.comp.exit_x * IMG_SZ,
 				p->map.comp.exit_y * IMG_SZ);
 			mlx_put_image_to_window(p->vars.mlx, p->vars.mlx_win,
-				p->sprite.sprites[EXIT_SPRITE][cont], p->map.comp.exit_x * IMG_SZ,
+				p->sprites[EXIT_SP][cont], p->map.comp.exit_x * IMG_SZ,
 				p->map.comp.exit_y * IMG_SZ);
-				//p->sprite.exit[cont], p->map.comp.exit_x * IMG_SZ,
 			cont++;
 		}
-		p->sprite.m_exit = p->sprite.exit[19];
+		p->sprites[EXIT_SP][20] = p->sprites[EXIT_SP][19];
 	}
 }
 
 void	ft_die(t_program *p)
 {
 	static int	cont = 0;
-	if (p->sprite.player == p->sprite.dead[0])
+	if (p->sprites[PLAYER_SP][0] == p->sprites[DEAD_SP][0])
 	{
 		if (cont < 6)
 		{
 			mlx_put_image_to_window(p->vars.mlx, p->vars.mlx_win,
-				p->sprite.floor, p->player.x * IMG_SZ,
+				p->sprites[FLOOR_SP][0], p->player.x * IMG_SZ,
 				p->player.y * IMG_SZ);
 			mlx_put_image_to_window(p->vars.mlx, p->vars.mlx_win,
-				p->sprite.dead[cont], p->player.x * IMG_SZ,
+				p->sprites[DEAD_SP][cont], p->player.x * IMG_SZ,
 				p->player.y * IMG_SZ);
 			cont++;
 		}

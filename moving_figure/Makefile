@@ -3,7 +3,7 @@ SRC = main.c hooks.c map_read.c val_char.c error.c\
 		val_path.c load_img.c wall_check.c map_check.c update.c
 OBJ = $(SRC:.c=.o)
 #-fsanitize=address
-FLAGS = -Wall -Wextra -Werror -fsanitize=address
+FLAGS = -Wall -Wextra -Werror
 LINKS = -lmlx -framework OpenGL -framework AppKit
 
 LIB = ../libft

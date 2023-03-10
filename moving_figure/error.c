@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:25:56 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/10 14:32:13 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:50:52 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,35 +55,35 @@ void	ft_path_error(t_map *map)
 	}
 }
 
-void	ft_sprite_error(t_sprite *sprite)
+void	ft_sprite_error(t_program *p)
 {
-	/*
+
 	int	i;
 
 	i = 0;
 	while (i < 20)
 	{
-		if (!sprite->wall[i] && i < 4)
+		if (!p->sprites[WALL_SP][i] && i < 4)
 			ft_print_error("Wall sprite has not loadeed propperly");
-		if (!sprite->exit[i])
+		if (!p->sprites[EXIT_SP][i])
 			ft_print_error("Exit sprite has not loadeed propperly");
-		if (!sprite->idle[i] && i < 4)
+		if (!p->sprites[PLAYER_SP][i] && i < 4)
 			ft_print_error("Player sprite has not loadeed propperly");
-		//if (!sprite->dead[i] && i < 6)
-		//	ft_print_error("Player sprite has not loadeed propperly");
+		if (!p->sprites[DEAD_SP][i] && i < 6)
+			ft_print_error("Player sprite has not loadeed propperly");
 		i++;
 	}
-	*/
-	if (!sprite->floor)
+
+	if (!p->sprites[FLOOR_SP][0])
 		ft_print_error("Floor sprite has not loadeed properly");
-	if (!sprite->coll)
+	if (!p->sprites[COLL_SP][0])
 		ft_print_error("Collectible sprite has not loadeed propperly");
-	if (!sprite->m_exit)
+	if (!p->sprites[EXIT_SP][20])
 		ft_print_error("Main exit sprite has not loadeed propperly");
-	if (!sprite->idlel0)
+	if (!p->sprites[PLAYERL_SP][0])
 		ft_print_error("Player idlel0 sprite has not loadeed propperly");
-	if (!sprite->player)
+	if (!p->sprites[PLAYER_SP][0])
 		ft_print_error("Player knight sprite has not loadeed propperly");
-	if (!sprite->enemy)
+	if (!p->sprites[ENEMY_SP][0])
 		ft_print_error("Enemy sprite has not loadeed propperly");
 }
