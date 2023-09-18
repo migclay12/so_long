@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 16:28:17 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/10 16:27:13 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/09/18 14:18:47 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 void	ft_loop_check(t_map *map, int y, int x)
 {
 	map->matrix[y][x] = PLAYER;
+	if (map->matrix[y - 1][x] == EXIT)
+		map->matrix[y - 1][x] = WALL;
+	if (map->matrix[y + 1][x] == EXIT)
+		map->matrix[y + 1][x] = WALL;
+	if (map->matrix[y][x - 1] == EXIT)
+		map->matrix[y][x - 1] = WALL;
+	if (map->matrix[y][x + 1] == EXIT)
+		map->matrix[y][x + 1] = WALL;
 	if (map->matrix[y - 1][x] != WALL && map->matrix[y - 1][x] != ENEMY
 		&& map->matrix[y - 1][x] != PLAYER)
 		ft_loop_check(map, y - 1, x);

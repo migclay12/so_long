@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 17:12:30 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/10 16:27:15 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:59:48 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void	ft_val_collect(t_map *map, t_player *player)
 	int	x;
 	int	y;
 
-	x = 0;
 	y = 0;
 	while (y < map->y)
 	{
+		x = 0;
 		while (map->matrix[y][x] != '\n')
 		{
 			if (!ft_str(VAL_CHAR, map->matrix[y][x]))
@@ -60,6 +60,5 @@ void	ft_val_collect(t_map *map, t_player *player)
 			x++;
 		}
 		y++;
-		x = 0;
 	}
 }

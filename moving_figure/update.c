@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:17:48 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/10 16:57:43 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/09/18 12:29:08 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	ft_win(t_program *p)
 void	ft_die(t_program *p)
 {
 	static int	cont = 0;
+
 	if (p->sprites[PLAYER_SP][0] == p->sprites[DEAD_SP][0])
 	{
 		if (cont < 6)
@@ -57,11 +58,10 @@ void	ft_die(t_program *p)
 				p->player.y * IMG_SZ);
 			cont++;
 		}
-		//p->sprite.player = p->sprite.dead[5];
+		if (cont == 6)
+			exit(0);
 	}
 }
-
-
 /*
 static void	player_animation(t_player *player)
 {

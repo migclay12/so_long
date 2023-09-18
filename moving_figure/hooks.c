@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:17:08 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/10 16:33:09 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:23:41 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,25 @@ void	ft_text_screen(t_program *p)
 	mlx_string_put(p->vars.mlx, p->vars.mlx_win,
 		(p->window.x / 2) - 90, 50, 0xffffff, "Number of moves: ");
 	mlx_string_put(p->vars.mlx, p->vars.mlx_win,
-		(p->window.x / 2) + 90, 50, 0xffffff, c);
+		(p->window.x / 2) + 80, 50, 0xffffff, c);
 	ft_printf("Moves: %s\n", c);
 	free(c);
 }
 
+//if (p->sprite.player.player == NULL)
+			//ft_print_error("Map error: Cannot load R Sprites");
+//if (p->sprite.player.player == NULL)
+			//ft_print_error("Map error: Cannot load L Sprites");
 int	ft_input(int key, t_program *p)
 {
 	if (key == D || key == RIGHT)
 	{
 		p->sprites[PLAYER_SP][0] = p->sprites[PLAYER_SP][1];
-		//if (p->sprite.player.player == NULL)
-			//ft_print_error("Map error: Cannot load R Sprites");
 		ft_move(p, 1, 0);
 	}
 	if (key == A || key == LEFT)
 	{
 		p->sprites[PLAYER_SP][0] = p->sprites[PLAYERL_SP][0];
-		//if (p->sprite.player.player == NULL)
-			//ft_print_error("Map error: Cannot load L Sprites");
 		ft_move(p, -1, 0);
 	}
 	if (key == S || key == DOWN)
@@ -72,8 +72,8 @@ void	ft_move(t_program *p, int x, int y)
 	ft_text_screen(p);
 }
 
-//ADDS MOVEMENT TO THE CHARACTER
 /*
+ADDS MOVEMENT TO THE CHARACTER
 int ft_update (void *param)
 {
 	t_program *program = (t_program *)param;

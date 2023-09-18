@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:58:17 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/10 16:55:44 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/09/18 12:52:58 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include	"headers.h"
 # include	"../libft/libft.h"
 
-int			ft_close();
+int			ft_close(void);
 
 //MAP
 void		ft_print_error(char *str);

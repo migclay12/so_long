@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:44:15 by miggonza          #+#    #+#             */
-/*   Updated: 2023/03/10 16:50:25 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/09/18 12:02:41 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	ft_save_sprites(t_program *p, char *address, int img, int num)
 		c = ft_itoa(i);
 		add0 = ft_strjoin(address, c);
 		add1 = ft_strjoin(add0, ".xpm");
-		printf("%s\n", add1);
 		p->sprites[img][i] = mlx_xpm_file_to_image(p->vars.mlx,
 				add1, &p->vars.img_x, &p->vars.img_y);
 		i++;
@@ -70,18 +69,6 @@ void	ft_save_sprites(t_program *p, char *address, int img, int num)
 
 void	ft_get_images(t_program *p)
 {
-	// p->floor = mlx_xpm_file_to_image(vars->mlx,
-	// 		TILE_XPM, &vars->img_x, &vars->img_y);
-	// p->coll = mlx_xpm_file_to_image(vars->mlx,
-	// 		COLLECTIBLE_XPM, &vars->img_x, &vars->img_y);
-	// p->m_exit = mlx_xpm_file_to_image(vars->mlx,
-	// 		EXIT_XPM, &vars->img_x, &vars->img_y);
-	// p->idlel0 = mlx_xpm_file_to_image(vars->mlx,
-	// 		PLAYERL0_XPM, &vars->img_x, &vars->img_y);
-	// p->player = mlx_xpm_file_to_image(vars->mlx,
-	// 		PLAYER0_XPM, &vars->img_x, &vars->img_y);
-	// p->enemy = mlx_xpm_file_to_image(vars->mlx,
-	// 		ENEMY_XPM, &vars->img_x, &vars->img_y);
 	ft_save_sprites(p, "../sprites/enemy", ENEMY_SP, 1);
 	ft_save_sprites(p, "../sprites/floor", FLOOR_SP, 1);
 	ft_save_sprites(p, "../sprites/skull", COLL_SP, 1);
@@ -90,7 +77,6 @@ void	ft_get_images(t_program *p)
 	ft_save_sprites(p, "../sprites/player/pidler", PLAYER_SP, 4);
 	ft_save_sprites(p, "../sprites/wall", WALL_SP, 4);
 	ft_save_sprites(p, "../sprites/player/dead", DEAD_SP, 6);
-	//ft_save_wall(vars, sprite);
 	ft_sprite_error(p);
 }
 
