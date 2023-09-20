@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:17:08 by miggonza          #+#    #+#             */
-/*   Updated: 2023/09/18 13:23:41 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/09/19 12:25:16 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,6 @@ void	ft_text_screen(t_program *p)
 	free(c);
 }
 
-//if (p->sprite.player.player == NULL)
-			//ft_print_error("Map error: Cannot load R Sprites");
-//if (p->sprite.player.player == NULL)
-			//ft_print_error("Map error: Cannot load L Sprites");
 int	ft_input(int key, t_program *p)
 {
 	if (key == D || key == RIGHT)

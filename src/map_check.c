@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:33:09 by miggonza          #+#    #+#             */
-/*   Updated: 2023/09/18 13:52:08 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:01:53 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	ft_open_file(char *map)
 	return (open(map, O_RDONLY));
 }
 
-//void	ft_all_map(t_program *m_store, t_map *map)
 void	ft_all_map(t_program *m_store, t_map *map, char *name)
 {
 	ft_memset(map, 0, sizeof(t_map));

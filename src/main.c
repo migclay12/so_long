@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:25:25 by miggonza          #+#    #+#             */
-/*   Updated: 2023/09/18 13:59:27 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/09/20 10:46:21 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,25 @@ void	ft_print_error(char *str)
 	ft_putstr("\n");
 	exit(0);
 }
-//MAKE AN IF FOR MAX WINDOW SIZE?!
-//MAX AMMOUNT IN MAP2
-//PIDLER123 NOT USED
-//MAZE! == FULL SIZE
+//MAKE AN IF FOR MAX WINDOW SIZE?! -- DONE
+//PIDLER23 NOT USED -- DONE
 //CLEAN HEADERS
 
-int	main(void)
+//COGER ARGUMENTOS OBLIGATORIO -- DONE?
+//CLEAN ExE IN MAKEFILE?
+
+int	main(int argc, char **argv)
 {
 	t_program	p;
 	t_map		map;
+	char		*file;
 
-	ft_all_map(&p, &map, "map0.ber");
+	file = "hola";
+	if (argc != 2)
+		ft_print_error("A map name has not been provided");
+	if (argc == 2)
+		file = argv[1];
+	ft_all_map(&p, &map, file);
 	p.vars.mlx = mlx_init();
 	p.vars.mlx_win = mlx_new_window(p.vars.mlx, p.window.x,
 			p.window.y, "Mad Ting");

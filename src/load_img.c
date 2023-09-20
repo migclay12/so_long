@@ -6,44 +6,11 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:44:15 by miggonza          #+#    #+#             */
-/*   Updated: 2023/09/18 12:02:41 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/09/20 10:41:52 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/so_long.h"
-/*
-void	ft_save_sprites(t_vars *vars, t_sprite *sprite, char *address, char map)
-{
-	int		i;
-	char	*c;
-	char	*add0;
-	char	*add1;
-
-	i = 0;
-	while (i < 20)
-	{
-		c = ft_itoa(i);
-		add0 = ft_strjoin(address, c);
-		add1 = ft_strjoin(add0, ".xpm");
-		if (map == 'E')
-			sprite->sprites[EXIT_SPRITE][i] = mlx_xpm_file_to_image(vars->mlx,
-					add1, &vars->img_x, &vars->img_y);
-		if (map == 'P' && i < 4)
-			sprite->idle[i] = mlx_xpm_file_to_image(vars->mlx,
-					add1, &vars->img_x, &vars->img_y);
-		if (map == '1' && i < 4)
-			sprite->wall[i] = mlx_xpm_file_to_image(vars->mlx,
-					add1, &vars->img_x, &vars->img_y);
-		if (map == 'D' && i < 6)
-			sprite->dead[i] = mlx_xpm_file_to_image(vars->mlx,
-					add1, &vars->img_x, &vars->img_y);
-		i++;
-		free(add0);
-		free(add1);
-		free(c);
-	}
-}
-*/
 
 void	ft_save_sprites(t_program *p, char *address, int img, int num)
 {
@@ -69,14 +36,14 @@ void	ft_save_sprites(t_program *p, char *address, int img, int num)
 
 void	ft_get_images(t_program *p)
 {
-	ft_save_sprites(p, "../sprites/enemy", ENEMY_SP, 1);
-	ft_save_sprites(p, "../sprites/floor", FLOOR_SP, 1);
-	ft_save_sprites(p, "../sprites/skull", COLL_SP, 1);
-	ft_save_sprites(p, "../sprites/player/pidlel", PLAYERL_SP, 1);
-	ft_save_sprites(p, "../sprites/exit/exit", EXIT_SP, 21);
-	ft_save_sprites(p, "../sprites/player/pidler", PLAYER_SP, 4);
-	ft_save_sprites(p, "../sprites/wall", WALL_SP, 4);
-	ft_save_sprites(p, "../sprites/player/dead", DEAD_SP, 6);
+	ft_save_sprites(p, "sprites/enemy", ENEMY_SP, 1);
+	ft_save_sprites(p, "sprites/floor", FLOOR_SP, 1);
+	ft_save_sprites(p, "sprites/skull", COLL_SP, 1);
+	ft_save_sprites(p, "sprites/player/pidlel", PLAYERL_SP, 1);
+	ft_save_sprites(p, "sprites/exit/exit", EXIT_SP, 21);
+	ft_save_sprites(p, "sprites/player/pidler", PLAYER_SP, 2);
+	ft_save_sprites(p, "sprites/wall/wall", WALL_SP, 4);
+	ft_save_sprites(p, "sprites/player/dead", DEAD_SP, 6);
 	ft_sprite_error(p);
 }
 

@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:25:56 by miggonza          #+#    #+#             */
-/*   Updated: 2023/09/18 14:10:04 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/09/20 10:33:50 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,8 @@ void	ft_sprite_error(t_program *p)
 			ft_print_error("Wall sprite has not loadeed propperly");
 		if (!p->sprites[EXIT_SP][i])
 			ft_print_error("Exit sprite has not loadeed propperly");
-		//if (!p->sprites[PLAYER_SP][i] && i < 4)
-		//	ft_print_error("Player sprite has not loadeed propperly");
+		if (!p->sprites[PLAYER_SP][i] && i < 2)
+			ft_print_error("Player sprite has not loadeed propperly");
 		if (!p->sprites[DEAD_SP][i] && i < 6)
 			ft_print_error("Player sprite has not loadeed propperly");
 		i++;
