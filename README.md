@@ -1,5 +1,9 @@
 # 🎮 So Long
 
+![C](https://img.shields.io/badge/Language-C-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+![42 Badge](https://img.shields.io/badge/42-Project-00babc)
+
 Un juego de laberinto 2D desarrollado como proyecto para 42 School, implementado en C con MiniLibX.
 
 ## 📋 Descripción
