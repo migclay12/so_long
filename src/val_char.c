@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   val_char.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 17:12:30 by miggonza          #+#    #+#             */
-/*   Updated: 2023/09/18 13:59:48 by miggonza         ###   ########.fr       */
+/*   Updated: 2025/09/24 00:11:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,6 @@ void	get_player(t_map *map, t_player *player, int y, int x)
 	map->comp.p++;
 	player->x = x;
 	player->y = y;
-}
-
-//APPLY THIS ONE?
-char	*ft_str(const char *s, int c)
-{
-	unsigned char	l;
-
-	l = (unsigned char)c;
-	while (*s != l)
-	{
-		if (!*s)
-			return (NULL);
-		s++;
-	}
-	return ((char *)s);
 }
 
 void	ft_val_collect(t_map *map, t_player *player)
@@ -45,7 +30,7 @@ void	ft_val_collect(t_map *map, t_player *player)
 		x = 0;
 		while (map->matrix[y][x] != '\n')
 		{
-			if (!ft_str(VAL_CHAR, map->matrix[y][x]))
+			if (!ft_strchr(VAL_CHAR, map->matrix[y][x]))
 				ft_print_error("Invalid char in map");
 			if (map->matrix[y][x] == COLLECTIBLE)
 				map->comp.c++;

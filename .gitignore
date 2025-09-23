@@ -1,0 +1,24 @@
+# Object files
+*.o
+
+# Executable
+so_long
+
+# Valgrind reports
+valgrind_report.txt
+
+# MiniLibX (external library)
+minilibx-linux/
+
+# Temporary files
+*~
+*.core
+core
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_img.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:44:15 by miggonza          #+#    #+#             */
-/*   Updated: 2023/09/20 10:41:52 by miggonza         ###   ########.fr       */
+/*   Updated: 2025/09/23 20:11:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void	ft_put_images(t_program *p, t_vars *vars, t_map *map, t_count *n)
 void	ft_image_loop(t_program *p, t_vars *vars, t_map *map)
 {
 	t_count	n;
+
+	mlx_clear_window(vars->mlx, vars->mlx_win);
 
 	ft_memset(&n, 0, sizeof(t_count));
 	while (n.y < map->y)

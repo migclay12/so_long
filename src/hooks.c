@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:17:08 by miggonza          #+#    #+#             */
-/*   Updated: 2023/09/19 12:25:16 by miggonza         ###   ########.fr       */
+/*   Updated: 2025/09/24 00:23:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_input(int key, t_program *p)
 	if (key == W || key == UP)
 		ft_move(p, 0, -1);
 	if (key == ESC)
-		exit (0);
+		ft_close(p);
 	return (0);
 }
 
@@ -50,7 +50,7 @@ void	ft_move(t_program *p, int x, int y)
 {
 	if (p->map.matrix[p->player.y + y][p->player.x + x] == EXIT
 		&& p->map.comp.c == 0)
-		ft_close();
+		ft_close(p);
 	if (p->map.matrix[p->player.y + y][p->player.x + x] == ENEMY)
 		p->sprites[PLAYER_SP][0] = p->sprites[DEAD_SP][0];
 	if (p->map.matrix[p->player.y + y][p->player.x + x] == EMPTY

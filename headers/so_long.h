@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:58:17 by miggonza          #+#    #+#             */
-/*   Updated: 2023/09/19 12:37:04 by miggonza         ###   ########.fr       */
+/*   Updated: 2025/09/24 00:23:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void		ft_val_path(t_map *map);
 void		ft_validate(t_map *map);
 
 //ERRORS
-int			ft_close(void);
+int			ft_close(t_program *p);
 void		ft_print_error(char *str);
 void		ft_wall_error(t_map *map);
 void		ft_char_error(t_program *p);
@@ -57,5 +57,10 @@ void		ft_image_loop(t_program *p, t_vars *vars, t_map *map);
 int			ft_anim(t_program *p);
 void		ft_win(t_program *p);
 void		ft_die(t_program *p);
+
+//CLEANUP
+void		ft_cleanup_program(t_program *p);
+void		ft_free_map_matrix(char **matrix, int height);
+void		ft_free_sprites(t_program *p);
 
 #endif

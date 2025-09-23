@@ -2,13 +2,13 @@ NAME = so_long
 
 SRC = src/main.c src/hooks.c src/map_read.c src/val_char.c \
 		src/error.c src/val_path.c src/load_img.c src/wall_check.c \
-		src/map_check.c src/update.c
+		src/map_check.c src/update.c src/cleanup.c
 
 OBJ = $(SRC:.c=.o)
 #-fsanitize=address
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -I./minilibx-linux
 
-LINKS = -lmlx -framework OpenGL -framework AppKit
+LINKS = -L./minilibx-linux -lmlx_Linux -lXext -lX11 -lXpm -lm -lz
 
 LIB = libft
 

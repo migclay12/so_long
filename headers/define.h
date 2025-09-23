@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:06:40 by miggonza          #+#    #+#             */
-/*   Updated: 2023/09/19 12:37:46 by miggonza         ###   ########.fr       */
+/*   Updated: 2025/09/23 19:18:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFINE_H
 # define DEFINE_H
 
-//HOOKS
-# define ESC	53
-# define W		13
-# define A		0
-# define S		1
-# define D		2
-# define UP		126
-# define RIGHT	124
-# define DOWN	125
-# define LEFT	123
+//HOOKS (Linux key codes)
+# define ESC	65307
+# define W		119
+# define A		97
+# define S		115
+# define D		100
+# define UP		65362
+# define RIGHT	65363
+# define DOWN	65364
+# define LEFT	65361
 # define IMG_SZ 64
 
 //MAP

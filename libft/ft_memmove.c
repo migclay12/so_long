@@ -18,14 +18,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	const char	*s;
 	char		*dstl;
 	const char	*srcl;
-	size_t		i;
 
 	d = dst;
 	s = src;
 	dstl = d + (len - 1);
 	srcl = s + (len - 1);
-	i = 0;
-	if (dst == '\0' && src == '\0')
+	if (dst == NULL && src == NULL)
 		return (NULL);
 	if (d < s)
 	{

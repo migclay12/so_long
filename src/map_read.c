@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   map_read.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 18:48:18 by miggonza          #+#    #+#             */
-/*   Updated: 2023/09/20 10:44:02 by miggonza         ###   ########.fr       */
+/*   Updated: 2025/09/24 00:11:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//ME GUARDA UN CARACTER DE MAS EN LA X
 #include "../headers/so_long.h"
 
 static char	**ft_free_map(char **matrix, int i)

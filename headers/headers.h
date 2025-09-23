@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   headers.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:06:33 by miggonza          #+#    #+#             */
-/*   Updated: 2023/02/20 18:06:35 by miggonza         ###   ########.fr       */
+/*   Updated: 2025/09/23 19:14:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define HEADERS_H
 
 //Minilib
-# include <mlx.h>
+# include "../minilibx-linux/mlx.h"
 
 //Write, Printf & Read
 # include <unistd.h>
