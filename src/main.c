@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:25:25 by miggonza          #+#    #+#             */
-/*   Updated: 2025/09/24 00:46:18 by marvin           ###   ########.fr       */
+/*   Updated: 2025/09/24 01:05:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 	ft_memset(p.sprites, 0, sizeof(p.sprites));
 	p.vars.mlx = mlx_init();
 	p.vars.mlx_win = mlx_new_window(p.vars.mlx, p.window.x,
-			p.window.y, "Mad Ting");
+			p.window.y, "So Long");
 	ft_get_images(&p);
 	ft_image_loop(&p, &p.vars, &p.map);
 	ft_text_screen(&p);

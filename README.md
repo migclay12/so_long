@@ -1,4 +1,4 @@
-# 🎮 So Long (Mad Ting)
+# 🎮 So Long
 
 Un juego de laberinto 2D desarrollado como proyecto para 42 School, implementado en C con MiniLibX.
 
